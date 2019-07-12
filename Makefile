@@ -31,7 +31,7 @@
 # - AG, 2018
 #
 ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
-PYTHON = /usr/bin/python
+PYTHON = /usr/bin/python3
 PYTHON3 = /usr/bin/python3
 VENV_DIR = venv/
 RM_RF := /bin/rm -rf
@@ -76,7 +76,6 @@ twine                           # The new way to publish to a PyPi repository
 # --- Begin your own requirements ---
 endef
 export REQUIREMENTS_TXT_CONTENT
-# export PATH=.:$(PATH)
 
 define PYPIRC_MESSAGE
 -------- Credentialed PyPirc Installation --------
@@ -130,6 +129,9 @@ PyBuild23 - https://github.com/mzpqnxow/pybuild23
     --- QUICK START: SOURCE CONTROL ---
       $$ git add . && git commit -m 'Add pybuild23 base' .
       NOTE: The .gitignore file will ensure only the required pybuild23 files are checked in (~15MB)
+
+      MacOS: Before run make, set shell PATH to PATH=.:$PATH. This will allow make to find realpath (not carried on MacOS)
+             in current dir 
 
 endef
 export PROJECT_HELP_MSG
