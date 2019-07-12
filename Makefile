@@ -76,7 +76,7 @@ twine                           # The new way to publish to a PyPi repository
 # --- Begin your own requirements ---
 endef
 export REQUIREMENTS_TXT_CONTENT
-export PATH=.:$PATH
+# export PATH=.:$(PATH)
 
 define PYPIRC_MESSAGE
 -------- Credentialed PyPirc Installation --------
